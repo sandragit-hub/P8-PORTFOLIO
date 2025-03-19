@@ -1,0 +1,52 @@
+/* reset.scss */
+
+/* Réinitialisation des marges et des paddings par défaut */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Réinitialiser la police et les styles par défaut des éléments */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    background: #fff;
+}
+
+/* Réinitialisation des styles des liens */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Réinitialisation des listes */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Réinitialisation des titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Réinitialisation des éléments de formulaire */
+input,
+button,
+textarea,
+select {
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
