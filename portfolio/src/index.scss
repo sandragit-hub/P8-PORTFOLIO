@@ -33,34 +33,48 @@
   margin: 0 auto;
 }
 
-.overlay {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-right: 30px; // Un peu d'espace entre le texte et l'image
-  max-width: 50%;
-
-  h1 {
-    font-size: 3.2em;
-    color: $whiteColor;
-
-  }
-
-  p {
-    font-size: 2em;
-    color: $yellowColor;
-    text-align: justify;
-  }
-
-}
-
 
 .banner-container {
+  margin-top: 100px;
   display: flex;
   justify-content: space-between; // Espace entre le texte et l'image
   align-items: center; // Centre les éléments verticalement
   padding: 0 50px;
+  gap: 50px;
 
+  .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 30px;
+
+    @media screen and (max-width: 1024px) {
+      width: 60%;
+    }
+
+    // Un peu d'espace entre le texte et l'image
+
+    h1 {
+      font-size: 5.2em;
+      color: $whiteColor;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 3.2em;
+      }
+
+    }
+
+    p {
+      font-size: 2em;
+      color: $yellowColor;
+      text-align: justify;
+
+      @media screen and (max-width: 1024px) {
+        font-size: 1.5em;
+      }
+    }
+
+  }
 
   .imgComputer {
     transform: scaleX(-1); // Tourne l'image de 180 degrés
@@ -69,8 +83,17 @@
     flex-shrink: 0;
   }
 
-
-
+  // Ombre indépendante sous l'image
+  .shadow {
+    position: absolute;
+    bottom: 60px; // Ajuste la position sous l'image
+    width: 26%; // Ajuste la largeur de l'ombre
+    height: 48px; // Épaisseur de l'ombre
+    background: #8886c329; // Couleur et opacité de l'ombre
+    border-radius: 50%; // Donne un effet circulaire
+    filter: blur(10px); // Applique un flou pour un rendu réaliste // Place l'ombre sous l'image
+    margin-left: 90px;
+  }
 }
 
 // Header //
@@ -91,29 +114,63 @@
     color: $whiteColor;
   }
 
+  input {
+    color: black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: $yellowColor;
+  }
+
   .nav {
     display: flex;
     align-items: center;
     gap: 60px;
-    border: solid;
+    border: solid 1px;
     border-radius: 30px;
     padding-left: 30px;
     padding-right: 30px;
     border-color: $yellowColor;
 
-
-    li {
-      list-style: none;
-      color: $whiteColor;
-
+    @media screen and (max-width: 1024px) {
+      width: 70%;
+      gap: 10px
     }
   }
 
-  input {
-    color: black;
-    border: 2px solid;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: $yellowColor;
+  li {
+    list-style: none;
+    color: $whiteColor;
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+    overflow: hidden; // Cache le pseudo-élément qui dépasse
+    border-radius: 30px; // Bord arrondi même sans effet
+    transition: color 0.3s ease-in-out;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(58, 57, 57, 0.275); // Couleur de l'effet
+      border-radius: 30px;
+      transform: scale(0); // Départ invisible
+      transform-origin: center;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    &:hover::before {
+      transform: scale(1); // Expansion totale
+    }
+
+    &:hover {
+      color: $purple4; // Change la couleur du texte au hover
+    }
+
+    &:active {
+      background: $purple4;
+      color: black;
+    }
+
   }
 }

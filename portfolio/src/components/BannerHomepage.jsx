@@ -13,8 +13,9 @@ const BannerHomepage = () => {
                     idées en réalité.
                 </p>
             </section>
-            <div>
+            <div className="image-container">
                 <img className="imgComputer" src={ordinateur} alt="ordinateur" />
+                <div className="shadow"></div>
             </div>
         </div>
     );
