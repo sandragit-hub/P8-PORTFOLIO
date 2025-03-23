@@ -1,5 +1,5 @@
 import React from 'react';
-import ordinateur from '../assets/ordinateur.png';
+import ordinateur from '../assets/ordi.png';
 
 
 const BannerHomepage = () => {
@@ -15,7 +15,6 @@ const BannerHomepage = () => {
             </section>
             <div className="image-container">
                 <img className="imgComputer" src={ordinateur} alt="ordinateur" />
-                <div className="shadow"></div>
             </div>
         </div>
     );

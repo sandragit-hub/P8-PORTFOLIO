@@ -8,29 +8,17 @@
 }
 
 
-
-.video-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1; // Place la vidéo en arrière-plan
-
-  video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
 .body-content {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   margin: 0 auto;
+  background-image: url('./assets/background.gif'); // Mets le chemin correct
+  background-size: cover; // Pour couvrir tout l’écran
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 
@@ -80,19 +68,6 @@
     transform: scaleX(-1); // Tourne l'image de 180 degrés
     height: 450px;
     width: auto; // Conserve les proportions de l'image
-    flex-shrink: 0;
-  }
-
-  // Ombre indépendante sous l'image
-  .shadow {
-    position: absolute;
-    bottom: 60px; // Ajuste la position sous l'image
-    width: 26%; // Ajuste la largeur de l'ombre
-    height: 48px; // Épaisseur de l'ombre
-    background: #8886c329; // Couleur et opacité de l'ombre
-    border-radius: 50%; // Donne un effet circulaire
-    filter: blur(10px); // Applique un flou pour un rendu réaliste // Place l'ombre sous l'image
-    margin-left: 90px;
   }
 }
 
@@ -146,7 +121,7 @@
     overflow: hidden; // Cache le pseudo-élément qui dépasse
     border-radius: 30px; // Bord arrondi même sans effet
     transition: color 0.3s ease-in-out;
-    z-index: 1;
+
 
     &::before {
       content: "";
