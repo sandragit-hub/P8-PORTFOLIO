@@ -5,6 +5,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
 }
 
 
@@ -17,7 +18,6 @@
   background-image: url('./assets/background.gif'); // Mets le chemin correct
   background-size: cover; // Pour couvrir tout l’écran
   background-position: center;
-  background-repeat: no-repeat;
   height: 100vh;
 }
 
@@ -30,11 +30,14 @@
   padding: 0 50px;
   gap: 50px;
 
+
   .overlay {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-right: 30px;
+    animation: fadeInLeft 1s ease-out; // Animation qui vient de la gauche
+
 
     @media screen and (max-width: 1024px) {
       width: 60%;
@@ -64,10 +67,56 @@
 
   }
 
-  .imgComputer {
-    transform: scaleX(-1); // Tourne l'image de 180 degrés
-    height: 450px;
-    width: auto; // Conserve les proportions de l'image
+  .image-container {
+    animation: fadeInRight 1s; // Animation qui vient de la droite avec 0.5s de délai
+    animation-fill-mode: both; // Assure que l’animation reste à l’état final
+
+    .imgComputer {
+      transform: scaleX(-1); // Tourne l'image de 180 degrés
+      height: 450px;
+      width: auto;
+      object-fit: contain; // Conserve les proportions de l'image
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  .word-change {
+    display: inline-block;
+    color: $yellowColor; // Couleur du mot en cours
+    border-right: 3px solid $purple4; // Effet de curseur de machine à écrire
+    animation: blink 1s step-end infinite;
+    padding-right: 2px; // Petit espace après le mot pour le curseur
+    margin-left: 8px; // Espace entre la phrase et le mot
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent; // Fait clignoter le curseur
+    }
   }
 }
 
@@ -97,9 +146,10 @@
   }
 
   .nav {
+    width: 50%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 60px;
     border: solid 1px;
     border-radius: 30px;
     padding-left: 30px;
@@ -107,8 +157,7 @@
     border-color: $yellowColor;
 
     @media screen and (max-width: 1024px) {
-      width: 70%;
-      gap: 10px
+      gap: 10px;
     }
   }
 
@@ -142,10 +191,37 @@
       color: $purple4; // Change la couleur du texte au hover
     }
 
-    &:active {
+    &.active {
       background: $purple4;
       color: black;
     }
 
+  }
+
+}
+
+.contact-container {
+
+
+
+  .contact {
+    background-color: $purple5;
+    width: 80%;
+    display: flex;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-bottom: 60px;
+    border-radius: 0px 20px 20px 0px;
+    align-items: center;
+  }
+
+
+  img {
+    height: 450px;
+    object-fit: contain;
+
+    @media screen and (max-width: 768px) {
+      height: 100px;
+    }
   }
 }
