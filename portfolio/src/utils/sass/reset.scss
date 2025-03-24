@@ -55,6 +55,5 @@ select {
 img {
     max-width: 100%;
     height: auto;
-    display: block; // Évite l'espace blanc sous l'image
-    object-fit: cover; // Optionnel, utile pour éviter la déformation des images
+    display: block; // Évite l'espace blanc sous l'image 
 }

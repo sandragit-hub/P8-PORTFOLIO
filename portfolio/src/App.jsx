@@ -1,5 +1,6 @@
 import './App.scss'
 import BannerHomepage from './components/BannerHomepage'
+import About from './components/About'
 import Header from './components/Header'
 
 
@@ -11,6 +12,7 @@ function App() {
       </header>
       <main>
         <BannerHomepage />
+        <About />
       </main>
       <footer></footer>
     </div>
