@@ -1,24 +1,29 @@
 @use './utils/sass/variable.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
 }
 
 
-.body-content {
-  position: absolute;
+.body-content::before {
+  content: "";
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  margin: 0 auto;
-  background-image: url('./assets/background.gif'); // Mets le chemin correct
-  background-size: cover; // Pour couvrir tout l’écran
+  height: 100%;
+  background-image: url('./assets/background.gif');
+  /* Vérifie le chemin */
+  background-size: cover;
   background-position: center;
-  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
 }
 
 
@@ -27,8 +32,10 @@
   display: flex;
   justify-content: space-between; // Espace entre le texte et l'image
   align-items: center; // Centre les éléments verticalement
-  padding: 0 50px;
   gap: 50px;
+  height: 100vh;
+  overflow: hidden;
+  font-family: $font-main;
 
 
   .overlay {
@@ -36,7 +43,7 @@
     flex-direction: column;
     justify-content: center;
     padding-right: 30px;
-    animation: fadeInLeft 1s ease-out; // Animation qui vient de la gauche
+    animation: fadeInLeft 1s ease-out;
 
 
     @media screen and (max-width: 1024px) {
@@ -46,8 +53,9 @@
     // Un peu d'espace entre le texte et l'image
 
     h1 {
-      font-size: 5.2em;
+      font-size: 4.2em;
       color: $whiteColor;
+      font-family: $font-title;
 
       @media screen and (max-width: 1024px) {
         font-size: 3.2em;
@@ -59,6 +67,7 @@
       font-size: 2em;
       color: $yellowColor;
       text-align: justify;
+      font-family: $font-main;
 
       @media screen and (max-width: 1024px) {
         font-size: 1.5em;
@@ -126,7 +135,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 50px;
+
 
 
   img {
@@ -136,6 +145,8 @@
 
   h2 {
     color: $whiteColor;
+    font-family: $font-title;
+    font-size: 2em;
   }
 
   input {
@@ -143,6 +154,9 @@
     border-radius: 20px;
     padding: 10px;
     background-color: $yellowColor;
+    font-family: $font-title;
+    font-weight: bold;
+    font-size: 1.2em;
   }
 
   .nav {
@@ -163,6 +177,7 @@
 
   li {
     list-style: none;
+    font-family: $font-title;
     color: $whiteColor;
     position: relative;
     padding: 10px 20px;
@@ -200,28 +215,50 @@
 
 }
 
-.contact-container {
+.about-container {
+  height: 100vh;
 
 
 
-  .contact {
+  .about {
     background-color: $purple5;
-    width: 80%;
+    width: 90%;
     display: flex;
+    justify-content: space-evenly;
     padding-top: 100px;
     padding-left: 50px;
     padding-bottom: 60px;
     border-radius: 0px 20px 20px 0px;
     align-items: center;
+
   }
 
 
   img {
-    height: 450px;
+    height: 350px;
     object-fit: contain;
 
     @media screen and (max-width: 768px) {
       height: 100px;
     }
+  }
+
+  .texte-sandra {
+    color: $whiteColor;
+    font-family: $font-main;
+  }
+
+  .title-apropos {
+    color: $whiteColor;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: $font-title;
+    font-size: 2em;
+  }
+
+  .title-sandra {
+    color: $whiteColor;
+    font-size: 2em;
+    font-family: $font-title;
   }
 }
