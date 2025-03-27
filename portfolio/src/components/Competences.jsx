@@ -9,30 +9,6 @@ const Competences = () => {
                     <div className="logo-img"></div>
                     <p>Js</p>
                 </div>
-                <div className="logo-container">
-                    <div className="logo-img"></div>
-                    <p>Js</p>
-                </div>
-                <div className="logo-container">
-                    <div className="logo-img"></div>
-                    <p>Js</p>
-                </div>
-                <div className="logo-container">
-                    <div className="logo-img"></div>
-                    <p>Js</p>
-                </div>
-                <div className="logo-container">
-                    <div className="logo-img"></div>
-                    <p>Js</p>
-                </div>
-                <div className="logo-container">
-                    <div className="logo-img"></div>
-                    <p>Js</p>
-                </div>
-                <div className="logo-container">
-                    <div className="logo-img"></div>
-                    <p>Js</p>
-                </div>
             </div>
         </div>
     );

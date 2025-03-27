@@ -26,8 +26,8 @@ const BannerHomepage = () => {
             setTimeout(() => {
                 setTypedWord(''); // Efface le mot en cours
                 setIsTyping(true); // Reprend l'écriture du mot suivant
-                setWordChange(nextWordIndex); // Passe au mot suivant
-            }, 2000); // Délai avant de commencer à taper le prochain mot
+                setWordChange(nextWordIndex);
+            }, 2000);
         }
 
         // Quand le mot est complètement tapé, on arrête l'intervalle
