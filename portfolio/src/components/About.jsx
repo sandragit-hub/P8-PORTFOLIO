@@ -1,5 +1,5 @@
 import React from 'react';
-import sandra from '../assets/sandra.png';
+import sandra from '/assets/sandra.png';
 
 const Contact = () => {
     return (

@@ -2,6 +2,7 @@ import './App.scss'
 import BannerHomepage from './components/BannerHomepage'
 import About from './components/About'
 import Header from './components/Header'
+import Skills from './components/Skills'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <main>
         <BannerHomepage />
         <About />
+        <Skills />
       </main>
       <footer></footer>
     </div>
