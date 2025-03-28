@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ordinateur from '../assets/ordi.png';
+import ordinateur from '/assets/ordi.png';
 
 const words = ["réalité", "succès", "projets"];
 

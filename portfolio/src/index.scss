@@ -17,7 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./assets/background.gif');
+  background-image: url('/assets/background.gif');
   /* Vérifie le chemin */
   background-size: cover;
   background-position: center;
@@ -261,4 +261,50 @@
     font-size: 2em;
     font-family: $font-title;
   }
+}
+
+// compétences 
+
+.skills-container {
+  background-color: #18172B;
+  transition: box-shadow .3sease;
+  box-shadow: 0 0 10px #A7A7B5;
+
+
+
+  .all-skills {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .container-img {
+
+    background-color: #464555;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff3;
+    transition: box-shadow .3sease;
+    box-shadow: 0 0 10px #493885;
+
+    .skill-img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
 }
