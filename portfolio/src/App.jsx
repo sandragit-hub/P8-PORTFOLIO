@@ -3,6 +3,7 @@ import BannerHomepage from './components/BannerHomepage'
 import About from './components/About'
 import Header from './components/Header'
 import Skills from './components/Skills'
+import Project from './components/Project'
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <BannerHomepage />
         <About />
         <Skills />
+        <Project />
       </main>
       <footer></footer>
     </div>
