@@ -1,4 +1,4 @@
-const Project = require('.models/Projects');
+const Project = require('../models/Project');
 
 
 // Contrôleur pour ajouter les compétences 
@@ -6,14 +6,17 @@ const Project = require('.models/Projects');
 exports.createProject = async (req, res, next) => {
     try {
         // Créer un nouveau projet avec les données envoyées dans la requête
-        const { title, image } = req.body;
+        const { title, image, descriptionCard, descriptionModal, tag } = req.body;
         const newProject = new Project({
-            title,
             image,
+            title,
+            descriptionCard,
+            descriptionModal,
+            tag,
         });
 
         // Sauvegarder la compétence dans la base de données
-        await newSProject.save();
+        await newProject.save();
 
         // Répondre avec la compétence créée
         res.status(201).json(newProject);

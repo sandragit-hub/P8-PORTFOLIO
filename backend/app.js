@@ -24,7 +24,6 @@ mongoose.connect('mongodb+srv://sandraPortfolio:mvWbOo544VvvyXjt@sandradata.e7zr
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 
-// Route pour récupérer les projets 
 
 
 app.use("/api/skills", skillRoutes);
