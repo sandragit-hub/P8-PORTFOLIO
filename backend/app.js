@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const skillRoutes = require("./route/skills");
-
+const projectRoutes = require("./route/project");
 
 
 
@@ -28,6 +28,6 @@ mongoose.connect('mongodb+srv://sandraPortfolio:mvWbOo544VvvyXjt@sandradata.e7zr
 
 
 app.use("/api/skills", skillRoutes);
-
+app.use("/api/projects", projectRoutes);
 
 module.exports = app;
