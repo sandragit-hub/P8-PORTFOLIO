@@ -12,20 +12,24 @@ const Project = () => {
     }, [])
 
     return (
-        <div>
-            <h2>Projets</h2>
-            {projects.map((project) => (
-                <div key={project} className='card-project'>
-                    <div className='containerCard-img'>
-                        <img className="project-img" src={project.image} alt={project.title} />
+        <div className='container-project'>
+            <h2 className='title-project'>Projets</h2>
+            <p className='texte-project'> Voici les différents projets réalisés durant mon parcours chez Openclassroom,
+                ces projets mon permis d’être conforntée aux réelles problématiques que nous sommes
+                susceptibles de rencontrer lors des projets réalisés en entreprise. </p>
+            <div className='card-container'>
+                {projects.map((project, index) => (
+                    <div key={index} className='card-project'>
+                        <div className='containerCard-img'>
+                            <img className="project-img" src={project.image} alt={project.title} />
+                        </div>
+                        <div className='container-title'>
+                            <h3 className='title-card'> {project.title}</h3>
+                        </div>
                     </div>
-                    <div>
-                        <h2> {project.title}</h2>
-                    </div>
-                </div>
-            )
-            )}
-
+                )
+                )}
+            </div>
         </div>
     );
 };

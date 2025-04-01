@@ -13,17 +13,19 @@ const Skills = () => {
     }, [])
 
     return (
-        <div className='skills-container'>
-            <h2> Compétences</h2>
-            <div className="all-skills">
-                {skills.map((skill, index) => (
-                    <div key={index} className="logo-container">
-                        <div className="container-img">
-                            <img className="skill-img" src={skill.image} alt={skill.title} />
+        <div>
+            <h2 className='title-competence'> Compétences</h2>
+            <div className='skills-container'>
+                <div className="all-skills">
+                    {skills.map((skill, index) => (
+                        <div key={index} className="logo-container">
+                            <div className="container-img">
+                                <img className="skill-img" src={skill.image} alt={skill.title} />
+                            </div>
+                            <h3 className='skill-title'>{skill.title}</h3>
                         </div>
-                        <h3>{skill.title}</h3>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </div>
     );
