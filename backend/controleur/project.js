@@ -33,6 +33,7 @@ exports.createProject = async (req, res, next) => {
 exports.getProjects = async (req, res, next) => {
     try {
         const projects = await Project.find();
+        console.log("Projets récupérées :", projects);
         res.status(200).json(projects);
     } catch (error) {
         res.status(400).json({ error });
