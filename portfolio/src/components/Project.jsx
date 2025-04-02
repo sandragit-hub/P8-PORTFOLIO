@@ -14,7 +14,9 @@ const Project = () => {
     return (
         <div className='container-project'>
             <h2 className='title-project'>Projets</h2>
-            <p className='texte-project'>Voici les différents projets réalisés durant mon parcours chez Openclassroom.</p>
+            <p className='texte-project'>Voici les différents projets réalisés durant mon parcours chez Openclassroom,
+                ces projets m'ont permis d’être confrontée aux réelles problématiques que nous sommes
+                susceptibles de rencontrer lors des projets réalisés en entreprise.</p>
             <div className='card-container'>
                 {projects.map((project, index) => (
                     <div
