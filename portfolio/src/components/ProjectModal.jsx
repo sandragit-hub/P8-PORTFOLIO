@@ -1,0 +1,30 @@
+import React from 'react';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
+
+const ProjectModal = ({ project, closeModal }) => {
+    if (!project) return null;
+
+    return (
+        <Modal
+            isOpen={true} //
+            onRequestClose={closeModal}
+            contentLabel="Détails du projet"
+            className="modal-content"
+            overlayClassName="modal-overlay"
+        >
+            <button className="close-btn" onClick={closeModal}>X</button>
+            <h2>{project.title}</h2>
+            <p>{project.descriptionModal}</p>
+            <div className="tags">
+                {project.tags && project.tags.map((tag, i) => (
+                    <span key={i} className="tag">{tag}</span>
+                ))}
+            </div>
+            <button className="source-btn">Code Source</button>
+        </Modal>
+    );
+};
+
+export default ProjectModal;

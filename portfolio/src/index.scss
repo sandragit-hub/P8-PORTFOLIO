@@ -28,12 +28,12 @@
 
 
 .banner-container {
-  margin-top: 100px;
+  margin-top: 300px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: space-between; // Espace entre le texte et l'image
   align-items: center; // Centre les éléments verticalement
   gap: 50px;
-  height: 100vh;
   overflow: hidden;
   font-family: $font-main;
 
@@ -136,8 +136,6 @@
   align-items: center;
   justify-content: space-between;
 
-
-
   img {
     width: 60px;
     height: 60px;
@@ -161,8 +159,6 @@
 
   .nav {
     width: 50%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     border: solid 1px;
     border-radius: 30px;
@@ -175,40 +171,49 @@
     }
   }
 
-  li {
-    list-style: none;
-    font-family: $font-title;
-    color: $whiteColor;
-    position: relative;
-    padding: 10px 20px;
-    cursor: pointer;
-    overflow: hidden; // Cache le pseudo-élément qui dépasse
-    border-radius: 30px; // Bord arrondi même sans effet
-    transition: color 0.3s ease-in-out;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    li {
+      list-style: none;
+      font-family: $font-title;
+      color: $whiteColor;
+      position: relative;
+      cursor: pointer;
+      padding: 5px 5px;
+      overflow: hidden; // Cache le pseudo-élément qui dépasse
+      border-radius: 30px; // Bord arrondi même sans effet
+      transition: color 0.3s ease-in-out;
 
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(58, 57, 57, 0.275); // Couleur de l'effet
-      border-radius: 30px;
-      transform: scale(0); // Départ invisible
-      transform-origin: center;
-      transition: transform 0.4s ease-in-out;
-    }
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(58, 57, 57, 0.275); // Couleur de l'effet
+        border-radius: 30px;
+        transform: scale(0); // Départ invisible
+        transform-origin: center;
+        transition: transform 0.4s ease-in-out;
+      }
 
-    &:hover::before {
-      transform: scale(1); // Expansion totale
-    }
+      &:hover::before {
 
-    &:hover {
-      color: $purple4; // Change la couleur du texte au hover
-    }
+        transform: scale(1); // Expansion totale
+      }
 
-    &.active {
-      background: $purple4;
-      color: black;
+      &:hover {
+        color: $purple4; // Change la couleur du texte au hover
+      }
+
+      &.active {
+        background: $purple4;
+        color: black;
+      }
+
     }
 
   }
@@ -216,9 +221,6 @@
 }
 
 .about-container {
-  height: 100vh;
-
-
 
   .about {
     background-color: $purple5;
@@ -228,6 +230,7 @@
     padding-top: 100px;
     padding-left: 50px;
     padding-bottom: 60px;
+    margin-bottom: 200px;
     border-radius: 0px 20px 20px 0px;
     align-items: center;
 
@@ -249,9 +252,9 @@
   }
 
   .title-apropos {
+    margin-bottom: 80px;
     color: $whiteColor;
     text-align: center;
-    padding-bottom: 30px;
     font-family: $font-title;
     font-size: 2em;
   }
@@ -265,56 +268,61 @@
 
 // compétences 
 
-.title-competence {
-  color: $whiteColor;
-  text-align: center;
-  padding-bottom: 30px;
-  font-family: $font-title;
-  font-size: 2em;
-  margin-top: 60px;
-}
+.skills {
+  margin-top: 300px;
+  margin-bottom: 200px;
 
-.skills-container {
-  background-color: #18172B;
-  transition: box-shadow .3sease;
-  box-shadow: 0 0 10px #A7A7B5;
-  border-radius: 10px;
-
-
-  .all-skills {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
+  .title-competence {
+    color: $whiteColor;
+    text-align: center;
+    margin-bottom: 80px;
+    font-family: $font-title;
+    font-size: 2em;
+    margin-top: 60px;
   }
 
-  .logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .skills-container {
+    background-color: #18172B;
+    transition: box-shadow .3sease;
+    box-shadow: 0 0 10px #A7A7B5;
+    border-radius: 10px;
 
-    .container-img {
-      background-color: #464555;
-      width: 4rem;
-      height: 4rem;
+
+    .all-skills {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      background-color: #fff3;
-      transition: box-shadow .3sease;
-      box-shadow: 0 0 10px #493885;
-
-      .skill-img {
-        width: 50px;
-        height: 50px;
-      }
-
+      justify-content: space-around;
+      padding: 20px;
     }
 
-    .skill-title {
-      color: $whiteColor;
-      font-family: $font-title;
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .container-img {
+        background-color: #464555;
+        width: 4rem;
+        height: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: #fff3;
+        transition: box-shadow .3sease;
+        box-shadow: 0 0 10px #493885;
+
+        .skill-img {
+          width: 50px;
+          height: 50px;
+        }
+
+      }
+
+      .skill-title {
+        color: $whiteColor;
+        font-family: $font-title;
+      }
     }
   }
 }
@@ -326,17 +334,17 @@
   .title-project {
     color: $whiteColor;
     text-align: center;
-    padding-bottom: 30px;
+    margin-bottom: 80px;
     font-family: $font-title;
     font-size: 2em;
     margin-top: 60px;
   }
 
   .texte-project {
+    margin-bottom: 80px;
     color: $whiteColor;
     font-family: $font-title;
     font-size: 1em;
-    margin-bottom: 30px;
 
   }
 
@@ -397,28 +405,6 @@
 
         }
 
-        &:hover .img-survol {
-          opacity: 1;
-        }
-
-        .visible {
-          opacity: 1;
-        }
-
-        .tags {
-          margin-top: 10px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 5px;
-
-          .tag {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-          }
-        }
-
       }
 
       .container-title {
@@ -436,16 +422,25 @@
         }
 
         .btnCard {
-          display: none;
-          width: 60px;
-          height: 60px;
+          opacity: 0;
+          width: 40px;
+          height: 40px;
           cursor: pointer;
           transition: opacity 0.3s ease-in-out;
         }
+      }
 
+      &.hover {
+        .img-survol {
+          opacity: 1;
+        }
 
-        &:hover .btnCard {
-          display: block;
+        .project-img {
+          filter: brightness(0.5);
+        }
+
+        .btnCard {
+          opacity: 1;
         }
       }
     }
