@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import ProjectModal from './ProjectModal';
 
 const Project = () => {
     const [projects, setProjects] = useState([]);
     const [hoverCard, setHoverCard] = useState(null);
+    const [modal, setModal] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
         fetch('http://localhost:3000/api/projects')
@@ -10,6 +13,16 @@ const Project = () => {
             .then((data) => setProjects(data))
             .catch((error) => console.log('Error:', error));
     }, []);
+
+    const openModal = (project) => {
+        setModal(project);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
+        setModal(null);
+    };
 
     return (
         <div className='container-project'>
@@ -21,40 +34,34 @@ const Project = () => {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className='card-project'
+                        className={`card-project ${hoverCard === index ? "hover" : ""}`}
                         onMouseEnter={() => setHoverCard(index)}
                         onMouseLeave={() => setHoverCard(null)}
                     >
-                        {/* Image + Description & Tags */}
                         <div className='containerCard-img'>
                             <img
-                                className={`project-img ${hoverCard === index ? "darken" : ""}`}
+                                className="project-img"
                                 src={project.image}
                                 alt={project.title}
                             />
                             {/* Contenu affiché au survol */}
-                            <div className={`img-survol ${hoverCard === index ? "visible" : ""}`}>
+                            <div className="img-survol" >
                                 <p className="descriptionCard">{project.descriptionCard}</p>
-                                <div className="tags">
-                                    {project.tags?.map((tag, i) => (
-                                        <span key={i} className="tag">{tag}</span>
-                                    ))}
-                                </div>
                             </div>
                         </div>
-
-                        {/* Titre + Bouton */}
                         <div className="container-title">
                             <h3 className='title-card'>{project.title}</h3>
                             <img
                                 src="/assets/btnCard.png"
                                 alt="Voir plus"
-                                className={`btnCard ${hoverCard === index ? "visible" : ""}`}
+                                className="btnCard" onClick={() => openModal(project)}
                             />
+
                         </div>
                     </div>
                 ))}
             </div>
+            {modalOpen && <ProjectModal project={modal} closeModal={closeModal} />}
         </div>
     );
 };

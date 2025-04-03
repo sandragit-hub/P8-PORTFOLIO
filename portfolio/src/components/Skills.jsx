@@ -13,7 +13,7 @@ const Skills = () => {
     }, [])
 
     return (
-        <div>
+        <div className='skills'>
             <h2 className='title-competence'> Compétences</h2>
             <div className='skills-container'>
                 <div className="all-skills">

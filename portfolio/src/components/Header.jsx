@@ -14,11 +14,13 @@ const Header = () => {
         <div className='header-container'>
             <h2> Portfolio </h2>
             <nav className='nav'>
-                <li className={selectLi === 'accueil' ? 'active' : ""} onClick={() => liClick('accueil')} id='accueil'>  <a href="#accueil-section"> Accueil </a> </li>
-                <li className={selectLi === 'apropos' ? 'active' : ""} onClick={() => liClick('apropos')} id='apropos'>  <a href="#apropos-section"> À propos </a> </li>
-                <img src={logo} alt="logo" />
-                <li className={selectLi === 'projets' ? 'active' : ""} onClick={() => liClick('projets')} id='projets'>  <a href="#projets-section"> Projets </a> </li>
-                <li className={selectLi === 'contact' ? 'active' : ""} onClick={() => liClick('contact')} id='contact'> <a href="#contact-section"> Contact </a> </li>
+                <ul>
+                    <li className={selectLi === 'accueil' ? 'active' : ""} onClick={() => liClick('accueil')} id='accueil'>  <a href="#accueil-section"> Accueil </a> </li>
+                    <li className={selectLi === 'apropos' ? 'active' : ""} onClick={() => liClick('apropos')} id='apropos'>  <a href="#apropos-section"> À propos </a> </li>
+                    <li className='no-hover'> <img src={logo} alt="logo" /></li>
+                    <li className={selectLi === 'projets' ? 'active' : ""} onClick={() => liClick('projets')} id='projets'>  <a href="#projets-section"> Projets </a> </li>
+                    <li className={selectLi === 'contact' ? 'active' : ""} onClick={() => liClick('contact')} id='contact'> <a href="#contact-section"> Contact </a> </li>
+                </ul>
             </nav>
             <input type='submit' value="Un projet ?"></input>
         </div>
