@@ -18,8 +18,8 @@ const ProjectModal = ({ project, closeModal }) => {
             <h2>{project.title}</h2>
             <p>{project.descriptionModal}</p>
             <div className="tags">
-                {project.tags && project.tags.map((tag, i) => (
-                    <span key={i} className="tag">{tag}</span>
+                {project.tag && project.tag.map((tag, index) => (
+                    <span key={index} className="tag">{tag}</span>
                 ))}
             </div>
             <button className="source-btn">Code Source</button>
