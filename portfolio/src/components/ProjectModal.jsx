@@ -8,7 +8,7 @@ const ProjectModal = ({ project, closeModal }) => {
 
     return (
         <Modal
-            isOpen={true} //
+            isOpen={true}
             onRequestClose={closeModal}
             contentLabel="Détails du projet"
             className="modal-content"

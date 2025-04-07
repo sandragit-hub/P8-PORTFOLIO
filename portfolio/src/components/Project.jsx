@@ -15,6 +15,7 @@ const Project = () => {
     }, []);
 
     const openModal = (project) => {
+        if (modalOpen) return; // Ne rien faire si la modal est déjà ouverte
         setModal(project);
         setModalOpen(true);
     };
@@ -44,7 +45,6 @@ const Project = () => {
                                 src={project.image}
                                 alt={project.title}
                             />
-                            {/* Contenu affiché au survol */}
                             <div className="img-survol" >
                                 <p className="descriptionCard">{project.descriptionCard}</p>
                             </div>
@@ -56,7 +56,6 @@ const Project = () => {
                                 alt="Voir plus"
                                 className="btnCard" onClick={() => openModal(project)}
                             />
-
                         </div>
                     </div>
                 ))}

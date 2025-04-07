@@ -4,6 +4,7 @@ import About from './components/About'
 import Header from './components/Header'
 import Skills from './components/Skills'
 import Project from './components/Project'
+import ContactForm from './components/ContactForm'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <About />
         <Skills />
         <Project />
+        <ContactForm />
       </main>
       <footer></footer>
     </div>
