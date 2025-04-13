@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Skills from './components/Skills'
 import Project from './components/Project'
 import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Skills />
         <Project />
         <ContactForm />
+        <Footer />
       </main>
       <footer></footer>
     </div>

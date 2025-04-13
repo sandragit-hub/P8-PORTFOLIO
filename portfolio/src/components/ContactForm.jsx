@@ -34,57 +34,58 @@ const ContactForm = () => {
 
             <form onSubmit={handleSubmit} className="contact-form">
                 <h2>Contactez-moi</h2>
-                <div className="form-row">
+                <div className="form-container">
 
-                    <div className="form-group">
-                        <label htmlFor="name"></label>
+                    <div className="form-row">
+
+                        <div className="form-input">
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                                placeholder="Nom"
+                            />
+                        </div>
+                        <div className="form-input">
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                                placeholder="Téléphone"
+                            />
+                        </div>
+                    </div>
+                    <div className="form-input">
+
                         <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
                             onChange={handleChange}
                             required
-                            placeholder="Nom"
+                            placeholder="Email"
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="phone"></label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
+                    <div className="form-input">
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
                             onChange={handleChange}
                             required
-                            placeholder="Téléphone"
+                            placeholder="Message"
                         />
                     </div>
+                    <button type="submit" className="submit-btn">Envoyer</button>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="email"></label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="Email"
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="message"></label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        placeholder="Message"
-                    />
-                </div>
-                <button type="submit" className="submit-btn">Envoyer</button>
             </form>
         </div>
     );
