@@ -20,7 +20,7 @@ const ContactForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        alert('Merci pour votre message. Nous vous répondrons sous peu.');
+        alert('Merci pour votre message. Je vous contacterais rapidement.');
         setFormData({
             name: '',
             phone: '',
