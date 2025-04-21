@@ -6,10 +6,17 @@ const Header = () => {
     const [selectLi, setSelectLi] = useState(null);
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(window.scrollY)
+    const [isOpen, setIsOpen] = useState(false);
 
     const liClick = (id) => {
         setSelectLi(id);
+        setIsOpen(false); // ferme le menu au click
     }
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen)
+    }
+
 
     useEffect(() => {
         const scroll = () => {
@@ -26,7 +33,8 @@ const Header = () => {
     return (
         <div className={`header-container ${showHeader ? 'show' : 'hide'}`}>
             <h2> Portfolio </h2>
-            <nav className='nav'>
+
+            <nav className={`nav ${isOpen ? 'open' : ''}`}>
                 <ul>
                     <li className={selectLi === 'accueil' ? 'active' : ''}>
                         <a href="#accueil-section" onClick={() => liClick('accueil')}>Accueil</a>
@@ -46,6 +54,12 @@ const Header = () => {
                 </ul>
             </nav>
             <input type='submit' value="Un projet ?"></input>
+            <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <span className='barre'></span>
+                <span className='barre'></span>
+                <span className='barre'></span>
+
+            </div>
         </div>
     );
 };

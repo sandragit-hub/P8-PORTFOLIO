@@ -24,7 +24,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: -1;
-  scroll-behavior: smooth;
 }
 
 
@@ -32,11 +31,16 @@
   margin-top: 300px;
   margin-bottom: 100px;
   display: flex;
-  justify-content: space-between; // Espace entre le texte et l'image
-  align-items: center; // Centre les éléments verticalement
+  justify-content: space-between;
+  align-items: center;
   gap: 50px;
   font-family: $font-main;
 
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
 
   .overlay {
     display: flex;
@@ -50,7 +54,10 @@
       width: 60%;
     }
 
-    // Un peu d'espace entre le texte et l'image
+    @media screen and (max-width: 850px) {
+
+      align-items: center;
+    }
 
     h1 {
       font-size: 4.2em;
@@ -59,6 +66,16 @@
 
       @media screen and (max-width: 1024px) {
         font-size: 3.2em;
+      }
+
+      @media screen and (max-width: 850px) {
+        font-size: 3em;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 2.5em;
+        text-align: center;
       }
 
     }
@@ -72,6 +89,16 @@
       @media screen and (max-width: 1024px) {
         font-size: 1.5em;
       }
+
+      @media screen and (max-width: 850px) {
+        text-align: left;
+        font-size: 1.4em;
+      }
+
+      @media screen and (max-width: 630px) {
+        font-size: 1.2em;
+      }
+
     }
 
   }
@@ -85,6 +112,10 @@
       height: 450px;
       width: auto;
       object-fit: contain; // Conserve les proportions de l'image
+
+      @media screen and (max-width: 850px) {
+        height: 300px;
+      }
     }
 
     @keyframes fadeInLeft {
@@ -115,16 +146,16 @@
 
   .word-change {
     display: inline-block;
-    color: $yellowColor; // Couleur du mot en cours
-    border-right: 3px solid $purple4; // Effet de curseur de machine à écrire
+    color: $yellowColor;
+    border-right: 3px solid $purple4;
     animation: blink 1s step-end infinite;
-    padding-right: 2px; // Petit espace après le mot pour le curseur
-    margin-left: 8px; // Espace entre la phrase et le mot
+    padding-right: 2px;
+    margin-left: 8px;
   }
 
   @keyframes blink {
     50% {
-      border-color: transparent; // Fait clignoter le curseur
+      border-color: transparent;
     }
   }
 }
@@ -133,7 +164,7 @@
 
 .header-container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1300px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,19 +174,24 @@
   padding: 1rem 2rem;
   transition: opacity 0.4s ease, transform 0.4s ease;
   opacity: 1;
-  transform: translateY(0);
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @media screen and (max-width: 850px) {
+    justify-content: space-evenly;
+  }
 
   // Classe appliquée quand on scroll vers le bas
   &.hide {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translate(-50%, -100%);
     pointer-events: none;
   }
 
   // Classe appliquée quand on scroll vers le haut
   &.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
     pointer-events: auto;
   }
 
@@ -163,12 +199,20 @@
   img {
     width: 60px;
     height: 60px;
+
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
   }
 
   h2 {
     color: $whiteColor;
     font-family: $font-title;
     font-size: 2em;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 20px;
+    }
   }
 
   input {
@@ -179,6 +223,10 @@
     font-family: $font-title;
     font-weight: bold;
     font-size: 1.2em;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 12px;
+    }
   }
 
   .nav {
@@ -194,55 +242,132 @@
     @media screen and (max-width: 1024px) {
       gap: 10px;
     }
-  }
-
-  ul {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-
-    li {
-      list-style: none;
-      font-family: $font-title;
-      color: $whiteColor;
-      position: relative;
-      cursor: pointer;
-      padding: 5px 5px;
-      border-radius: 30px;
-      transition: color 0.3s ease-in-out;
 
 
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(58, 57, 57, 0.275);
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      align-items: center;
+
+      li {
+        list-style: none;
+        font-family: $font-title;
+        color: $whiteColor;
+        position: relative;
+        cursor: pointer;
+        padding: 5px 5px;
         border-radius: 30px;
-        transform: scale(0);
-        transform-origin: center;
-        transition: transform 0.4s ease-in-out;
-      }
+        transition: color 0.3s ease-in-out;
 
-      &:hover::before {
+        @media screen and (max-width: 1200px) {
+          font-size: 15px;
+        }
 
-        transform: scale(1); // Expansion totale
-      }
+        @media screen and (max-width: 1024px) {
+          font-size: 12px;
+        }
 
-      &:hover {
-        color: $purple4; // Change la couleur du texte au hover
-      }
 
-      &.active {
-        background: $purple4;
-        color: black;
+        &::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: rgba(58, 57, 57, 0.275);
+          border-radius: 30px;
+          transform: scale(0);
+          transform-origin: center;
+          transition: transform 0.4s ease-in-out;
+        }
+
+        &:hover::before {
+
+          transform: scale(1);
+        }
+
+        &:hover {
+          color: $purple4;
+        }
+
+        &.active {
+          background: $purple4;
+          color: black;
+        }
+
       }
 
     }
 
+    @media screen and (max-width: 850px) {
+      position: absolute;
+      top: 80px;
+      right: 2rem;
+      background-color: #18172bcb;
+      border-radius: 20px;
+      border: 1px solid $yellowColor;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 250px;
+      padding: 20px;
+      gap: 20px;
+      transform: translateX(120%);
+      z-index: 1000;
+
+      &.open {
+        transform: translateX(0%);
+      }
+
+      ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+
+        li {
+          width: 100%;
+          text-align: left;
+          padding: 10px 0;
+        }
+      }
+    }
   }
 
 }
+
+// MENU HAMBURGER
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1100;
+
+  span {
+    height: 3px;
+    width: 40px;
+    background: $yellowColor;
+    margin: 3px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  @media screen and (max-width: 850px) {
+    display: flex;
+  }
+}
+
 
 .about-container {
 
@@ -258,6 +383,16 @@
     border-radius: 0px 20px 20px 0px;
     align-items: center;
 
+    @media screen and (max-width: 850px) {
+      flex-direction: column-reverse;
+      gap: 25px;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 485px) {
+      padding: 50px;
+      margin-bottom: 20px;
+    }
   }
 
 
@@ -266,13 +401,21 @@
     object-fit: contain;
 
     @media screen and (max-width: 768px) {
-      height: 100px;
+      height: 250px;
     }
   }
 
   .texte-sandra {
     color: $whiteColor;
     font-family: $font-main;
+
+    @media screen and (max-width: 768px) {
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: 485px) {
+      font-size: 12px;
+    }
   }
 
   .title-apropos {
@@ -310,12 +453,23 @@
     transition: box-shadow .3sease;
     box-shadow: 0 0 10px #A7A7B5;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr; // version desktop
+    gap: 2rem;
+
 
 
     .all-skills {
       display: flex;
       justify-content: space-around;
       padding: 20px;
+
+      @media screen and (max-width: 850px) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 2rem;
+      }
     }
 
     .logo-container {
@@ -351,6 +505,7 @@
   }
 }
 
+// projets // 
 
 .container-project {
 
@@ -475,6 +630,10 @@
   }
 }
 
+
+// modal //
+
+
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -551,6 +710,9 @@
   z-index: 999;
   animation: fadeIn 0.3s ease-in-out;
 }
+
+// Formulaire de contact // 
+
 
 .contact-container {
   margin-top: 200px;
@@ -635,6 +797,10 @@
     }
   }
 }
+
+
+// Footer // 
+
 
 .footer {
   background-color: $purple6;
