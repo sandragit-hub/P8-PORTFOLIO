@@ -11,6 +11,7 @@ const Header = () => {
     const liClick = (id) => {
         setSelectLi(id);
         setIsOpen(false); // ferme le menu au click
+        document.getElementById(`${id}-section`)?.scrollIntoView({ behavior: 'smooth' });
     }
 
     const toggleMenu = () => {
@@ -36,29 +37,28 @@ const Header = () => {
 
             <nav className={`nav ${isOpen ? 'open' : ''}`}>
                 <ul>
-                    <li className={selectLi === 'accueil' ? 'active' : ''}>
-                        <a href="#accueil-section" onClick={() => liClick('accueil')}>Accueil</a>
+                    <li className={selectLi === 'accueil' ? 'active' : ''} onClick={() => liClick('accueil', 'accueil-section')}>
+                        Accueil
                     </li>
-                    <li className={selectLi === 'apropos' ? 'active' : ''}>
-                        <a href="#apropos-section" onClick={() => liClick('apropos')}>À propos</a>
+                    <li className={selectLi === 'apropos' ? 'active' : ''} onClick={() => liClick('apropos', 'apropos-section')}>
+                        À propos
                     </li>
                     <li className="no-hover">
-                        <img src={logo} alt="logo" />
+                        <img className="circle" src={logo} alt="logo" />
                     </li>
-                    <li className={selectLi === 'projets' ? 'active' : ''}>
-                        <a href="#projets-section" onClick={() => liClick('projets')}>Projets</a>
+                    <li className={selectLi === 'projets' ? 'active' : ''} onClick={() => liClick('projets', 'projets-section')}>
+                        Projets
                     </li>
                     <li className={selectLi === 'contact' ? 'active' : ''}>
-                        <a href="#contact-section" onClick={() => liClick('contact')}>Contact</a>
+                        <a href="#contact-section" onClick={(e) => liClick(e, 'contact')}>Contact</a>
                     </li>
                 </ul>
             </nav>
-            <input type='submit' value="Un projet ?"></input>
+            <input type='submit' value="Un projet ?" onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}></input>
             <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 <span className='barre'></span>
                 <span className='barre'></span>
                 <span className='barre'></span>
-
             </div>
         </div>
     );

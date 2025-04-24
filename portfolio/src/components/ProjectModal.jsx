@@ -22,7 +22,14 @@ const ProjectModal = ({ project, closeModal }) => {
                     <span key={index} className="tag">{tag}</span>
                 ))}
             </div>
-            <button className="source-btn">Code Source</button>
+            <a
+                href={project.codeSource}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="source-btn" >
+                Code Source
+            </a>
+
         </Modal>
     );
 };
