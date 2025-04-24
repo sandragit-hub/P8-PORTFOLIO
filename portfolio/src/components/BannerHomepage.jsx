@@ -41,7 +41,7 @@ const BannerHomepage = () => {
     }, [typedWord, isTyping, wordChange]);
 
     return (
-        <div className='banner-container'>
+        <div id="accueil-section" className='banner-container'>
             <section className="overlay">
                 <h1>Développeur Web</h1>
                 <p>

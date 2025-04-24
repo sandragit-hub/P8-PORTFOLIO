@@ -17,8 +17,18 @@ const ContactForm = () => {
         });
     };
 
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!isValidEmail(formData.email)) {
+            alert("Veuillez entrer une adresse email valide.");
+            return;
+        }
         console.log('Form submitted:', formData);
         alert('Merci pour votre message. Je vous contacterais rapidement.');
         setFormData({
