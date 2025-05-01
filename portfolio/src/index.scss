@@ -45,7 +45,6 @@
     padding-right: 30px;
     animation: fadeInLeft 1s ease-out;
 
-
     @media screen and (max-width: 1024px) {
       width: 60%;
     }
@@ -524,7 +523,6 @@
 
 .container-project {
 
-
   .title-project {
     color: $whiteColor;
     text-align: center;
@@ -648,7 +646,6 @@
 
 // modal //
 
-
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -664,7 +661,6 @@
   box-shadow: 0 0 15px $whiteColor;
   color: $whiteColor;
   font-family: $font-title;
-
 
   .source-btn {
     align-self: center;
@@ -733,7 +729,6 @@
 
 // Formulaire de contact // 
 
-
 .contact-container {
   margin-top: 200px;
   background-image: url('/assets/bg-form.jpg');
@@ -741,7 +736,6 @@
   justify-content: center;
   padding: 20px;
   border-radius: 15px 15px 0px 0px;
-
 
   .contact-form {
     max-width: 600px;
@@ -772,9 +766,6 @@
     .form-container {
       text-align: center;
 
-
-
-
       .form-row {
         display: flex;
         gap: 15px;
@@ -785,11 +776,21 @@
         }
       }
 
+      .hidden-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+      }
+
       .form-input {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
-
 
         input,
         textarea {
@@ -839,8 +840,6 @@
 .footer {
   background-color: $purple6;
   padding: 80px;
-
-
 
   .footer-container {
     display: flex;

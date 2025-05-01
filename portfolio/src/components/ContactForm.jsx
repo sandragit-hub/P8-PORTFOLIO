@@ -63,6 +63,7 @@ const ContactForm = () => {
                     <div className="form-row">
 
                         <div className="form-input">
+                            <label htmlFor="name" className="hidden-label">Nom</label>
                             <input
                                 type="text"
                                 id="name"
@@ -74,6 +75,7 @@ const ContactForm = () => {
                             />
                         </div>
                         <div className="form-input">
+                            <label htmlFor="phone" className="hidden-label">Phone</label>
                             <input
                                 type="tel"
                                 id="phone"
@@ -86,7 +88,7 @@ const ContactForm = () => {
                         </div>
                     </div>
                     <div className="form-input">
-
+                        <label htmlFor="email" className="hidden-label">Email</label>
                         <input
                             type="email"
                             id="email"
@@ -98,7 +100,7 @@ const ContactForm = () => {
                         />
                     </div>
                     <div className="form-input">
-
+                        <label htmlFor="message" className="hidden-label">Message</label>
                         <textarea
                             id="message"
                             name="message"
