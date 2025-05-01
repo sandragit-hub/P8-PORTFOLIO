@@ -28,7 +28,6 @@ exports.createSkill = async (req, res, next) => {
 exports.getSkills = async (req, res, next) => {
     try {
         const skills = await Skill.find();
-        console.log("Compétences récupérées :", skills);
         res.status(200).json(skills);
     } catch (error) {
         console.error("Erreur MongoDB :", error);
