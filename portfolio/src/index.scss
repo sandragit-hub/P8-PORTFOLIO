@@ -3,11 +3,8 @@
 
 
 :root {
-
   line-height: 1.5;
   font-weight: 400;
-
-
 }
 
 
@@ -25,7 +22,6 @@
   background-attachment: fixed;
   z-index: -1;
 }
-
 
 .banner-container {
   margin-top: 300px;
@@ -63,10 +59,6 @@
       font-size: 4.2em;
       color: $whiteColor;
       font-family: $font-title;
-
-      @media screen and (max-width: 1024px) {
-        font-size: 3.2em;
-      }
 
       @media screen and (max-width: 850px) {
         font-size: 3em;
@@ -143,7 +135,6 @@
     }
   }
 
-
   .word-change {
     display: inline-block;
     color: $yellowColor;
@@ -191,7 +182,6 @@
     pointer-events: auto;
   }
 
-
   img {
     width: 60px;
     height: 60px;
@@ -202,9 +192,6 @@
     font-family: $font-title;
     font-size: 2em;
 
-    @media screen and (max-width: 1024px) {
-      font-size: 20px;
-    }
   }
 
   input {
@@ -216,9 +203,7 @@
     font-weight: bold;
     font-size: 1.2em;
 
-    @media screen and (max-width: 1024px) {
-      font-size: 12px;
-    }
+
   }
 
   .nav {
@@ -227,13 +212,9 @@
     align-items: center;
     border: solid 1px;
     border-radius: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 9px;
+    padding-right: 9px;
     border-color: $yellowColor;
-
-    @media screen and (max-width: 1024px) {
-      gap: 10px;
-    }
 
     ul {
       display: flex;
@@ -251,12 +232,8 @@
         border-radius: 30px;
         transition: color 0.3s ease-in-out;
 
-        @media screen and (max-width: 1200px) {
-          font-size: 15px;
-        }
-
         @media screen and (max-width: 1024px) {
-          font-size: 12px;
+          font-size: 15px;
         }
 
         @media screen and (max-width: 850px) {
@@ -266,7 +243,6 @@
         &.no-hover {
           @media screen and (max-width: 850px) {
             display: none;
-
           }
         }
 
@@ -451,6 +427,10 @@
   margin-top: 300px;
   margin-bottom: 200px;
 
+  @media screen and (max-width: 850px) {
+    margin-top: 60px;
+  }
+
   .title-competence {
     color: $whiteColor;
     text-align: center;
@@ -468,8 +448,6 @@
     display: grid;
     grid-template-columns: 1fr; // version desktop
     gap: 2rem;
-
-
 
     .all-skills {
       display: flex;
@@ -504,30 +482,41 @@
       align-items: center;
 
       .container-img {
-        background-color: #464555;
+        position: relative;
         width: 4rem;
         height: 4rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         border-radius: 10px;
         background-color: #fff3;
         transition: box-shadow .3sease;
         box-shadow: 0 0 10px #493885;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        &:hover {
+          box-shadow:
+            0 0 8px #9b59ff,
+            0 0 12px #9b59ff,
+            0 0 16px #9b59ff,
+            0 0 20px #9b59ff;
+        }
 
         .skill-img {
           width: 50px;
           height: 50px;
+          z-index: 2;
         }
 
       }
 
-      .skill-title {
-        color: $whiteColor;
-        font-family: $font-title;
-      }
     }
+
+    .skill-title {
+      color: $whiteColor;
+      font-family: $font-title;
+    }
+
   }
 }
 
@@ -694,7 +683,12 @@
 
   .close-btn {
     align-self: flex-end;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
   }
+
 
   .tags {
     display: flex;
