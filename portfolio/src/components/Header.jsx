@@ -44,7 +44,7 @@ const Header = () => {
                         À propos
                     </li>
                     <li className="no-hover">
-                        <img className="circle" src={logo} alt="logo" />
+                        <img className="circle" src={logo} alt="circle" />
                     </li>
                     <li className={selectLi === 'projets' ? 'active' : ''} onClick={() => liClick('projets', 'projets-section')}>
                         Projets
