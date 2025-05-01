@@ -49,8 +49,8 @@ const Header = () => {
                     <li className={selectLi === 'projets' ? 'active' : ''} onClick={() => liClick('projets', 'projets-section')}>
                         Projets
                     </li>
-                    <li className={selectLi === 'contact' ? 'active' : ''}>
-                        <a href="#contact-section" onClick={(e) => liClick(e, 'contact')}>Contact</a>
+                    <li className={selectLi === 'contact' ? 'active' : ''} onClick={() => liClick('contact', 'contact-section')}>
+                        Contact
                     </li>
                 </ul>
             </nav>

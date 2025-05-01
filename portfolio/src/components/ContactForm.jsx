@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+
 
 
 const ContactForm = () => {
@@ -29,8 +31,20 @@ const ContactForm = () => {
             alert("Veuillez entrer une adresse email valide.");
             return;
         }
+
+        emailjs.send(
+            'service_n72d0gp',
+            'template_61pr11k',
+            {
+                from_name: formData.name,
+                phone: formData.phone,
+                from_email: formData.email,
+                message: formData.message,
+            },
+            'R0Lho5QKQ7Yt-i8Mr'
+        )
         console.log('Form submitted:', formData);
-        alert('Merci pour votre message. Je vous contacterais rapidement.');
+        alert('Merci pour votre message. Je vous contacterai rapidement.');
         setFormData({
             name: '',
             phone: '',

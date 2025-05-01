@@ -20,9 +20,10 @@ function App() {
         <Skills />
         <Project />
         <ContactForm />
-        <Footer />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
