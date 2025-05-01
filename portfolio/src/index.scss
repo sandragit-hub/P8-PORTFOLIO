@@ -50,7 +50,6 @@
     }
 
     @media screen and (max-width: 850px) {
-
       align-items: center;
     }
 
@@ -74,7 +73,6 @@
     p {
       font-size: 2em;
       color: $yellowColor;
-      text-align: justify;
       font-family: $font-main;
 
       @media screen and (max-width: 1024px) {
@@ -83,11 +81,7 @@
 
       @media screen and (max-width: 850px) {
         text-align: left;
-        font-size: 1.4em;
-      }
-
-      @media screen and (max-width: 630px) {
-        font-size: 1.2em;
+        font-size: 1.3em;
       }
 
     }
@@ -191,6 +185,9 @@
     font-family: $font-title;
     font-size: 2em;
 
+    @media screen and (max-width: 850px) {
+      font-size: 1.2em;
+    }
   }
 
   input {
@@ -201,7 +198,11 @@
     font-family: $font-title;
     font-weight: bold;
     font-size: 1.2em;
+    cursor: pointer;
 
+    @media screen and (max-width: 850px) {
+      font-size: 1em;
+    }
 
   }
 
@@ -215,11 +216,40 @@
     padding-right: 9px;
     border-color: $yellowColor;
 
+    @media screen and (max-width: 850px) {
+      position: absolute;
+      top: 80px;
+      right: 2rem;
+      background-color: #18172bcb;
+      border-radius: 20px;
+      border: 1px solid $yellowColor;
+      display: flex;
+      align-items: center;
+      width: 90%;
+      height: 500px;
+      padding: 20px;
+      transform: translateX(120%);
+      transition: transform 0.8s ease-in-out;
+      z-index: 1000;
+
+      &.open {
+        transform: translateX(0%);
+      }
+    }
+
     ul {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
       align-items: center;
+
+      @media screen and (max-width: 850px) {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+      }
 
       li {
         list-style: none;
@@ -231,18 +261,24 @@
         border-radius: 30px;
         transition: color 0.3s ease-in-out;
 
+        @media screen and (max-width: 850px) {
+          font-size: 24px;
+          text-align: center;
+          padding: 10px 0;
+
+        }
+
+        &.no-hover {
+          pointer-events: none;
+
+        }
+
         @media screen and (max-width: 1024px) {
           font-size: 15px;
         }
 
         @media screen and (max-width: 850px) {
           font-size: 18px;
-        }
-
-        &.no-hover {
-          @media screen and (max-width: 850px) {
-            display: none;
-          }
         }
 
         &::before {
@@ -281,40 +317,6 @@
 
     }
 
-    @media screen and (max-width: 850px) {
-      position: absolute;
-      top: 80px;
-      right: 2rem;
-      background-color: #18172bcb;
-      border-radius: 20px;
-      border: 1px solid $yellowColor;
-      display: flex;
-      align-items: center;
-      width: 90%;
-      height: 500px;
-      padding: 20px;
-      transform: translateX(120%);
-      transition: transform 0.8s ease-in-out;
-      z-index: 1000;
-
-      &.open {
-        transform: translateX(0%);
-      }
-
-      ul {
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-
-        li {
-          font-size: 24px;
-          text-align: center;
-          padding: 10px 0;
-        }
-      }
-    }
   }
 
 }
@@ -678,11 +680,12 @@
   }
 
   .close-btn {
-    align-self: flex-end;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: sticky;
+    top: 0px;
+    text-align: end;
     z-index: 1000;
+    font-size: 2rem;
+    cursor: pointer;
   }
 
 
