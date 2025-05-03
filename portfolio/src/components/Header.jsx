@@ -54,7 +54,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-            <input type='submit' value="Un projet ?" onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}></input>
+            <span className="btn-projet" role='link' onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}> Un projet ?</span>
             <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
                 <span className='barre'></span>
                 <span className='barre'></span>

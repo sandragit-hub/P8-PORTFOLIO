@@ -43,7 +43,6 @@ const ContactForm = () => {
             },
             'R0Lho5QKQ7Yt-i8Mr'
         )
-        console.log('Form submitted:', formData);
         alert('Merci pour votre message. Je vous contacterai rapidement.');
         setFormData({
             name: '',
