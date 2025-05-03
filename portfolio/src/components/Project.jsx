@@ -8,7 +8,7 @@ const Project = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/projects')
+        fetch('https://p8-portfolio.onrender.com/api/projects')
             .then((res) => res.json())
             .then((data) => setProjects(data))
             .catch((error) => console.log('Error:', error));

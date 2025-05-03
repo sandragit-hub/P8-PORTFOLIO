@@ -5,7 +5,7 @@ const Skills = () => {
     const [skills, setSkills] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/skills')
+        fetch('https://p8-portfolio.onrender.com/api/skills')
             .then((res) => res.json())
             .then((data) => setSkills(data))
             .catch((error) => console.log('Error:', error));
