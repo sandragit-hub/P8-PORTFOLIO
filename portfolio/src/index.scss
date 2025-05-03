@@ -45,9 +45,7 @@
     padding-right: 30px;
     animation: fadeInLeft 1s ease-out;
 
-    @media screen and (max-width: 1024px) {
-      width: 60%;
-    }
+
 
     @media screen and (max-width: 850px) {
       align-items: center;
@@ -62,12 +60,6 @@
         font-size: 3em;
         text-align: center;
       }
-
-      @media screen and (max-width: 480px) {
-        font-size: 2.5em;
-        text-align: center;
-      }
-
     }
 
     p {
@@ -75,9 +67,7 @@
       color: $yellowColor;
       font-family: $font-main;
 
-      @media screen and (max-width: 1024px) {
-        font-size: 1.5em;
-      }
+
 
       @media screen and (max-width: 850px) {
         text-align: left;
@@ -190,7 +180,7 @@
     }
   }
 
-  input {
+  .btn-projet {
     color: black;
     border-radius: 20px;
     padding: 10px;
@@ -255,26 +245,16 @@
         list-style: none;
         font-family: $font-title;
         color: $whiteColor;
+        font-size: 15px;
         position: relative;
         cursor: pointer;
         padding: 5px 5px;
         border-radius: 30px;
         transition: color 0.3s ease-in-out;
 
-        @media screen and (max-width: 850px) {
-          font-size: 24px;
-          text-align: center;
-          padding: 10px 0;
-
-        }
-
         &.no-hover {
           pointer-events: none;
 
-        }
-
-        @media screen and (max-width: 1024px) {
-          font-size: 15px;
         }
 
         @media screen and (max-width: 850px) {
@@ -298,19 +278,12 @@
 
         &:hover {
           color: $purple4;
-
-          @media screen and (max-width: 850px) {
-            width: 150px;
-          }
         }
 
         &.active {
           background: $purple4;
           color: black;
 
-          @media screen and (max-width: 850px) {
-            width: 150px;
-          }
         }
 
       }
@@ -366,7 +339,9 @@
     justify-content: space-evenly;
     padding-top: 100px;
     padding-left: 50px;
+    padding-right: 50px;
     padding-bottom: 60px;
+    gap: 30px;
     margin-bottom: 200px;
     border-radius: 0px 20px 20px 0px;
     align-items: center;
@@ -377,34 +352,18 @@
       width: 100%;
       padding-right: 50px;
     }
-
-    @media screen and (max-width: 485px) {
-      padding: 50px;
-      margin-bottom: 20px;
-    }
   }
 
 
   img {
     height: 350px;
+    width: auto;
     object-fit: contain;
-
-    @media screen and (max-width: 768px) {
-      height: 250px;
-    }
   }
 
   .texte-sandra {
     color: $whiteColor;
     font-family: $font-main;
-
-    @media screen and (max-width: 768px) {
-      font-size: 15px;
-    }
-
-    @media screen and (max-width: 485px) {
-      font-size: 12px;
-    }
   }
 
   .title-apropos {
@@ -462,14 +421,9 @@
         gap: 2rem;
       }
 
-      @media screen and (max-width: 550px) {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, auto);
-        gap: 2rem;
-      }
 
-      @media screen and (max-width: 450px) {
+
+      @media screen and (max-width: 600px) {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, auto);
@@ -750,9 +704,7 @@
     backdrop-filter: blur(5px);
     background-color: $purple1;
 
-    @media screen and (max-width: 650px) {
-      width: 80%;
-    }
+
 
     h2 {
       font-family: $font-title;
@@ -773,7 +725,7 @@
         display: flex;
         gap: 15px;
 
-        @media screen and (max-width: 650px) {
+        @media screen and (max-width: 600px) {
           flex-direction: column;
           gap: 0px;
         }

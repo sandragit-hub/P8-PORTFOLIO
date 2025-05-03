@@ -11,7 +11,7 @@ const Contact = () => {
                 <section>
                     <h3 className="title-sandra" > Qui suis-je ? </h3>
                     <p className='texte-sandra'>
-                        🚀 Je m’appelle Sandra Rossi, développeuse web passionnée,<br /> j’adore relever des défis et repousser mes limites. <br />
+                        🚀 Je m’appelle Sandra Rossi, développeuse web passionnée,<br /> j’adore relever des défis et repousser mes limites.
                         <br />Ancienne sportive de compétition, j’ai gardé cette <br />soif de dépassement, cette exigence de rigueur et de performance.<br />
                         Aujourd’hui, c’est dans le code que je retrouve <br />cette adrénaline, ce besoin de stratégie et de <br />précision.
                         Avec React, je conçois des interfaces modernes, <br />dynamiques et optimisées, pensées pour marquer les esprits.
