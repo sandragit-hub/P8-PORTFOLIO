@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const skillRoutes = require("./route/skills");
 const projectRoutes = require("./route/project");
+const cors = require('cors')
 
 
 
@@ -23,7 +24,7 @@ mongoose.connect('mongodb+srv://sandraPortfolio:mvWbOo544VvvyXjt@sandradata.e7zr
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
 
-
+app.use(cors({ origin: 'https://sandra-rossi.vercel.app' }));
 
 
 app.use("/api/skills", skillRoutes);
