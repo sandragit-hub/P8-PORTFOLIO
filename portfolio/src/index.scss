@@ -348,9 +348,11 @@
 
     @media screen and (max-width: 850px) {
       flex-direction: column-reverse;
-      gap: 25px;
+      gap: 10px;
       width: 100%;
       padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
     }
   }
 
