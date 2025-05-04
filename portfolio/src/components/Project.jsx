@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProjectModal from './ProjectModal';
+import { API_BASE_URL } from "../config";
 
 const Project = () => {
     const [projects, setProjects] = useState([]);
@@ -8,7 +9,7 @@ const Project = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
     useEffect(() => {
-        fetch('https://p8-portfolio.onrender.com/api/projects')
+        fetch(`${API_BASE_URL}/api/projects`)
             .then((res) => res.json())
             .then((data) => setProjects(data))
             .catch((error) => console.log('Error:', error));

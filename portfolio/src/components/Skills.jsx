@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from "../config";
 
 
 const Skills = () => {
     const [skills, setSkills] = useState([]);
 
     useEffect(() => {
-        fetch('https://p8-portfolio.onrender.com/api/skills')
+        fetch(`${API_BASE_URL}/api/skills`)
             .then((res) => res.json())
             .then((data) => setSkills(data))
             .catch((error) => console.log('Error:', error));
