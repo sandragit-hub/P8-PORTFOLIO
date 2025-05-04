@@ -9,12 +9,23 @@ const cors = require('cors')
 
 app.use(express.json());
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    next();
-});
+const allowedOrigins = [
+    'http://localhost:5175',
+    'https://sandra-rossi.vercel.app'
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        // autoriser les outils comme Postman sans origin
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true,
+}));
+
 
 mongoose.connect('mongodb+srv://sandraPortfolio:mvWbOo544VvvyXjt@sandradata.e7zrm.mongodb.net/?retryWrites=true&w=majority&appName=SandraDATA',
     {
@@ -23,9 +34,6 @@ mongoose.connect('mongodb+srv://sandraPortfolio:mvWbOo544VvvyXjt@sandradata.e7zr
     })
     .then(() => console.log('Connexion à MongoDB réussie !'))
     .catch(() => console.log('Connexion à MongoDB échouée !'));
-
-app.use(cors({ origin: 'https://sandra-rossi.vercel.app' }));
-
 
 app.use("/api/skills", skillRoutes);
 app.use("/api/projects", projectRoutes);
