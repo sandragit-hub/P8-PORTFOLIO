@@ -29,7 +29,7 @@ const Project = () => {
     return (
         <section id='projets-section' className='container-project'>
             <h2 className='title-project'>Projets</h2>
-            <p className='texte-project'>Voici les différents projets réalisés durant mon parcours chez Openclassroom,
+            <p className='texte-project'>Voici les différents projets réalisés durant mon parcours de Developpeur Web chez Openclassroom,
                 ces projets m'ont permis d’être confrontée aux réelles problématiques que nous sommes
                 susceptibles de rencontrer lors des projets réalisés en entreprise.</p>
             <div className='card-container' >
