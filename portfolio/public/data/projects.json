@@ -1,0 +1,42 @@
+[
+  {
+    "title": "BOOKI",
+    "descriptionCard": "Ce projet utilise HTML et CSS pour concevoir une page d'accueil responsive d'une agence de voyage, en respectant les maquettes Figma pour mobile, tablette et desktop.",
+    "descriptionModal": "Dans ce projet, j’ai développé la page d’accueil d’une agence de voyage avec HTML et CSS. Mon objectif était de créer une interface responsive à partir de maquettes Figma pour mobile, tablette et desktop, en garantissant une compatibilité optimale sur tous les appareils. J’ai opté pour un codage manuel plutôt que d’utiliser l’outil code de Figma, ce qui m’a aidé à mieux maîtriser la structuration et le stylisme du code. Cette approche a renforcé mes compétences en design responsive, un atout clé pour assurer une expérience utilisateur fluide sur tous les supports.",
+    "image": "/assets/projects/booki.webp",
+    "tag": ["HTML", "CSS"],
+    "codeSource": "https://github.com/sandragit-hub/Project-2-BOOKI.git"
+  },
+  {
+    "title": "Sophie Bluel",
+    "descriptionCard": "Développement d'un site vitrine interactif pour une photographe freelance, offrant une plateforme pour exposer son travail et permettre aux clients potentiels de la contacter.",
+    "descriptionModal": "Dans ce projet, j'ai conçu une page web dynamique pour une photographe en utilisant JavaScript et une API. Mon travail s'est concentré sur le Front-End, avec l'affichage des clichés de l'artiste et la gestion des interactions utilisateur via le DOM. J'ai également développé une interface d'administration, comprenant une page de connexion et une modale permettant d’ajouter de nouvelles photos, entièrement codées à la main. Cette expérience m'a permis d'approfondir mes compétences en JavaScript, en manipulation d'événements et en intégration d'API, des éléments clés pour concevoir des sites web dynamiques et performants.",
+    "image": "/assets/projects/sophie.webp",
+    "tag": ["Html", "CSS", "JavaScript"],
+    "codeSource": "https://github.com/sandragit-hub/Projet-3-SOPHIE-BLUEL.git"
+  },
+  {
+    "title": "Nina Carducci",
+    "descriptionCard": "Amélioration du référencement (SEO) et de l’accessibilité d’un site web grâce à des outils comme Lighthouse et Wave, afin d’optimiser ses performances et sa visibilité en ligne.",
+    "descriptionModal": "Dans ce projet, j’ai travaillé en tant que développeur freelance pour optimiser la vitesse, le référencement et l’accessibilité d’un site web. Après avoir analysé les points d’amélioration à l’aide de Lighthouse et Wave, j’ai mis en place des optimisations ciblées pour accélérer le chargement des pages et améliorer le SEO. Enfin, j’ai élaboré un rapport détaillé mettant en avant les optimisations effectuées et leur impact sur la visibilité et l’expérience utilisateur. Cette mission m’a permis d’approfondir mes compétences en performance web et en SEO, des éléments essentiels pour créer des sites plus rapides, accessibles et mieux référencés.",
+    "image": "/assets/projects/nina.webp",
+    "tag": ["SEO", "Wave", "Lighthouse", "JavaScript"],
+    "codeSource": "https://github.com/sandragit-hub/Nina-Carducci-PROJET-4.git"
+  },
+  {
+    "title": "Kasa",
+    "descriptionCard": "Développement du front-end d’une application avec React et React Router pour offrir une navigation fluide et une expérience utilisateur réactive, en s’appuyant sur des maquettes et des données simulées.",
+    "descriptionModal": "Dans ce projet, j’ai développé l’interface utilisateur d’une application en utilisant React et React Router, afin de garantir une navigation intuitive et fluide entre les différentes pages. J’ai conçu et structuré les composants tout en mettant en place un système de routage efficace. En travaillant à partir de maquettes et de données simulées en JSON, j’ai pu affiner mes compétences en React et en gestion de navigation. J’ai également utilisé SASS pour apporter un design soigné et responsive. Ce projet m’a permis de renforcer mon expertise en développement d’applications dynamiques et modernes, conformes aux standards du secteur.",
+    "image": "/assets/projects/kasa.webp",
+    "tag": ["React", "SASS", "JavaScript"],
+    "codeSource": "https://github.com/sandragit-hub/Projet-5-KASA-.git"
+  },
+  {
+    "title": "Mon Vieux Grimoire",
+    "descriptionCard": "Création d’une API RESTful avec Node.js et Express pour la gestion des livres et des auteurs, en intégrant MongoDB comme système de stockage des données.",
+    "descriptionModal": "Dans ce projet, j’ai conçu le back-end d’une plateforme de notation de livres en développant un serveur efficace avec Express et MongoDB. J’ai défini les modèles de données et mis en place les routes pour réaliser les opérations CRUD sur les livres et leurs évaluations. Un système d’authentification sécurisé a été intégré, et la gestion des images a été optimisée pour maximiser les performances. En appliquant les bonnes pratiques du Green Code, j’ai veillé à rendre l’application plus éco-responsable. Ce projet m’a permis d’approfondir mes compétences en développement back-end, gestion de bases de données et sécurité, des atouts essentiels pour créer des applications web performantes et durables.",
+    "image": "/assets/projects/grimoire.webp",
+    "tag": ["NodeJs", "MongoDB", "Express"],
+    "codeSource": "https://github.com/sandragit-hub/P6-MV-Grimoire.git"
+  }
+]
