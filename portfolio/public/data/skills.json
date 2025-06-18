@@ -1,0 +1,36 @@
+[
+  {
+    "title": "React",
+    "image": "/assets/skills/react.svg"
+  },
+
+  {
+    "title": "Figma",
+    "image": "/assets/skills/figma.svg"
+  },
+
+  {
+    "title": "CSS",
+    "image": "/assets/skills/css.svg"
+  },
+  {
+    "title": "HTML",
+    "image": "/assets/skills/html.svg"
+  },
+  {
+    "title": "Javascript",
+    "image": "/assets/skills/js.svg"
+  },
+  {
+    "title": "MongoDB",
+    "image": "/assets/skills/mongodb.svg"
+  },
+  {
+    "title": "NodeJS",
+    "image": "/assets/skills/nodejs.svg"
+  },
+  {
+    "title": "SASS",
+    "image": "/assets/skills/sass.webp"
+  }
+]
