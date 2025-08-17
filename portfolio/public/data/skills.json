@@ -32,5 +32,13 @@
   {
     "title": "SASS",
     "image": "/assets/skills/sass.webp"
+  },
+  {
+    "title": "TAILWIND",
+    "image": "/assets/skills/tailwind.svg"
+  },
+  {
+    "title": "WORDPRESS",
+    "image": "/assets/skills/wordpress.svg"
   }
 ]

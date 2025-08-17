@@ -1,5 +1,13 @@
 [
   {
+    "title": "Beafloreconseil",
+    "descriptionCard": "Création site Web de formation pour les professionnels de santé avec React et Tailwind.",
+    "descriptionModal": "Dans ce projet, j’ai conçu et développé le site internet d’un centre de formation en présentiel dédié aux professionnels de santé. L’objectif était de mettre en valeur l’offre de formation, de simplifier l’accès aux informations pratiques et d’améliorer l’expérience utilisateur grâce à une navigation claire et intuitive.",
+    "image": "/assets/projects/beaflore.png",
+    "tag": ["React", "Tailwind"],
+    "codeSource": "https://beafloreconseil.fr/"
+  },
+  {
     "title": "BOOKI",
     "descriptionCard": "Ce projet utilise HTML et CSS pour concevoir une page d'accueil responsive d'une agence de voyage, en respectant les maquettes Figma pour mobile, tablette et desktop.",
     "descriptionModal": "Dans ce projet, j’ai développé la page d’accueil d’une agence de voyage avec HTML et CSS. Mon objectif était de créer une interface responsive à partir de maquettes Figma pour mobile, tablette et desktop, en garantissant une compatibilité optimale sur tous les appareils. J’ai opté pour un codage manuel plutôt que d’utiliser l’outil code de Figma, ce qui m’a aidé à mieux maîtriser la structuration et le stylisme du code. Cette approche a renforcé mes compétences en design responsive, un atout clé pour assurer une expérience utilisateur fluide sur tous les supports.",
