@@ -29,10 +29,13 @@ const Project = () => {
     <section id="projets-section" className="container-project">
       <h2 className="title-project">Projets</h2>
       <p className="texte-project">
-        Voici les différents projets réalisés durant mon parcours de Developpeur
-        Web chez Openclassroom, ces projets m'ont permis d’être confrontée aux
-        réelles problématiques que nous sommes susceptibles de rencontrer lors
-        des projets réalisés en entreprise.
+        Chaque projet que vous trouverez ici raconte une étape de mon parcours
+        en tant que développeuse web. J’ai commencé avec des bases solides,
+        puis, au fil des défis techniques et des nouvelles technologies
+        explorées, j’ai affiné mon approche et gagné en créativité. Ces
+        réalisations sont plus que de simples exercices : elles reflètent ma
+        progression, ma capacité d’adaptation et ma passion pour créer des
+        expériences web utiles et inspirantes.
       </p>
       <div className="card-container">
         {projects.map((project, index) => (

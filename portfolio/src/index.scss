@@ -1,12 +1,10 @@
-@use './utils/sass/variable.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-
+@use "./utils/sass/variable.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
 
 :root {
   line-height: 1.5;
   font-weight: 400;
 }
-
 
 .body-content::before {
   content: "";
@@ -15,7 +13,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/background.gif');
+  background-image: url("/assets/background.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -23,7 +21,7 @@
   z-index: -1;
 }
 
-// Barre de chargement 
+// Barre de chargement
 
 .loader-container {
   position: fixed;
@@ -67,9 +65,7 @@
       width: 0%;
     }
   }
-
 }
-
 
 .banner-container {
   margin-top: 300px;
@@ -93,8 +89,6 @@
     padding-right: 30px;
     animation: fadeInLeft 1s ease-out;
 
-
-
     @media screen and (max-width: 850px) {
       align-items: center;
     }
@@ -115,15 +109,11 @@
       color: $yellowColor;
       font-family: $font-main;
 
-
-
       @media screen and (max-width: 850px) {
         text-align: left;
         font-size: 1.3em;
       }
-
     }
-
   }
 
   .image-container {
@@ -241,7 +231,6 @@
     @media screen and (max-width: 850px) {
       font-size: 1em;
     }
-
   }
 
   .nav {
@@ -257,16 +246,17 @@
     @media screen and (max-width: 850px) {
       position: absolute;
       top: 80px;
-      right: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
       background-color: #18172bcb;
       border-radius: 20px;
       border: 1px solid $yellowColor;
       display: flex;
       align-items: center;
-      width: 90%;
+      width: 60%;
       height: 500px;
-      padding: 20px;
-      transform: translateX(120%);
+      padding: 10px;
+
       z-index: 1000;
 
       &.open {
@@ -302,7 +292,6 @@
 
         &.no-hover {
           pointer-events: none;
-
         }
 
         @media screen and (max-width: 850px) {
@@ -325,21 +314,16 @@
         }
 
         &:hover {
-          color: $purple4;
+          color: $purple7;
         }
 
         &.active {
           background: $purple4;
           color: black;
-
         }
-
       }
-
     }
-
   }
-
 }
 
 // MENU HAMBURGER
@@ -349,7 +333,6 @@
   flex-direction: column;
   cursor: pointer;
   z-index: 1100;
-
 
   span {
     height: 3px;
@@ -377,9 +360,8 @@
   }
 }
 
-
+// A propos de moi //
 .about-container {
-
   .about {
     background-color: $purple5;
     width: 90%;
@@ -399,19 +381,24 @@
       gap: 5px;
       width: 100%;
       padding: 20px;
+      gap: 40px;
     }
   }
-
 
   img {
     height: 350px;
     width: auto;
     object-fit: contain;
   }
-
-  .texte-sandra {
-    color: $whiteColor;
-    font-family: $font-main;
+  .container-sandra {
+    width: 50%;
+    @media screen and (max-width: 850px) {
+      width: 90%;
+    }
+    .texte-sandra {
+      color: $whiteColor;
+      font-family: $font-main;
+    }
   }
 
   .title-apropos {
@@ -426,10 +413,14 @@
     color: $whiteColor;
     font-size: 2em;
     font-family: $font-title;
+    @media screen and (max-width: 850px) {
+      text-align: center;
+      margin-bottom: 15px;
+    }
   }
 }
 
-// compétences 
+// compétences
 
 .skills {
   margin-top: 300px;
@@ -449,9 +440,9 @@
   }
 
   .skills-container {
-    background-color: #18172B;
-    transition: box-shadow .3sease;
-    box-shadow: 0 0 10px #A7A7B5;
+    background-color: #18172b;
+    transition: box-shadow 0.3sease;
+    box-shadow: 0 0 10px #a7a7b5;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr; // version desktop
@@ -464,12 +455,10 @@
 
       @media screen and (max-width: 850px) {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         grid-template-rows: repeat(2, auto);
         gap: 2rem;
       }
-
-
 
       @media screen and (max-width: 600px) {
         display: grid;
@@ -490,7 +479,7 @@
         height: 4rem;
         border-radius: 10px;
         background-color: #fff3;
-        transition: box-shadow .3sease;
+        transition: box-shadow 0.3sease;
         box-shadow: 0 0 10px #493885;
         display: flex;
         justify-content: center;
@@ -498,10 +487,7 @@
         overflow: hidden;
 
         &:hover {
-          box-shadow:
-            0 0 8px #9b59ff,
-            0 0 12px #9b59ff,
-            0 0 16px #9b59ff,
+          box-shadow: 0 0 8px #9b59ff, 0 0 12px #9b59ff, 0 0 16px #9b59ff,
             0 0 20px #9b59ff;
         }
 
@@ -510,23 +496,19 @@
           height: 50px;
           z-index: 2;
         }
-
       }
-
     }
 
     .skill-title {
       color: $whiteColor;
       font-family: $font-title;
     }
-
   }
 }
 
-// projets // 
+// projets //
 
 .container-project {
-
   .title-project {
     color: $whiteColor;
     text-align: center;
@@ -541,11 +523,9 @@
     color: $whiteColor;
     font-family: $font-title;
     font-size: 1em;
-
   }
 
   .card-container {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -561,14 +541,12 @@
       display: flex;
       flex-direction: column;
       padding: 5px;
-      transition: box-shadow .3sease;
+      transition: box-shadow 0.3sease;
       box-shadow: 0 0 10px #493885;
-
 
       .containerCard-img {
         position: relative; // Permet à .img-survol de se positionner dessus
         width: 100%;
-
 
         .project-img {
           width: 100%;
@@ -576,7 +554,6 @@
           object-fit: cover;
           border-radius: 10px;
           transition: filter 0.3s ease-in-out;
-
         }
 
         .img-survol {
@@ -598,9 +575,7 @@
           text-align: center;
           font-family: $font-title;
           font-size: 12px;
-
         }
-
       }
 
       .container-title {
@@ -647,7 +622,6 @@
   }
 }
 
-
 // modal //
 
 .modal-content {
@@ -671,7 +645,7 @@
     padding: 15px 40px 15px 40px;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(135deg, #000000 0%, #DDFF00 100%);
+    background: linear-gradient(135deg, #000000 0%, #ddff00 100%);
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
@@ -690,7 +664,6 @@
     cursor: pointer;
   }
 
-
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -705,7 +678,6 @@
       font-weight: 500;
     }
   }
-
 }
 
 @keyframes fadeIn {
@@ -732,11 +704,11 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
-// Formulaire de contact // 
+// Formulaire de contact //
 
 .contact-container {
   margin-top: 200px;
-  background-image: url('/assets/bg-form.jpg');
+  background-image: url("/assets/bg-form.jpg");
   display: flex;
   justify-content: center;
   padding: 20px;
@@ -751,8 +723,6 @@
     color: white;
     backdrop-filter: blur(5px);
     background-color: $purple1;
-
-
 
     h2 {
       font-family: $font-title;
@@ -822,7 +792,7 @@
         padding: 15px 40px 15px 40px;
         border: none;
         border-radius: 8px;
-        background: linear-gradient(135deg, #000000 0%, #DDFF00 100%);
+        background: linear-gradient(135deg, #000000 0%, #ddff00 100%);
         font-weight: 600;
         font-size: 1rem;
         cursor: pointer;
@@ -836,9 +806,7 @@
   }
 }
 
-
-// Footer // 
-
+// Footer //
 
 .footer {
   background-color: $purple6;
@@ -852,10 +820,9 @@
     font-family: $font-title;
     gap: 15px;
 
-    >a {
+    > a {
       width: 50px;
       height: 50px;
     }
   }
-
 }
