@@ -1,47 +1,41 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function Loader({ onFinish }) {
-    const [progress, setProgress] = useState(0);
-    const gifUrl = '/assets/background.gif';
+  const [progress, setProgress] = useState(0);
+  const videoUrl = "/assets/background.mp4"; // ta nouvelle vidéo
 
-    useEffect(() => {
-        const img = new Image();
-        img.src = gifUrl;
+  useEffect(() => {
+    const video = document.createElement("video");
+    video.src = videoUrl;
 
-        let interval; // Déclaration de l'intervalle ici, en dehors du `useEffect`
+    let interval;
 
-        img.onload = () => {
-            // Quand le gif est chargé, on démarre la progression de la barre
-            interval = setInterval(() => {
-                setProgress((prev) => {
-                    if (prev >= 100) {
-                        clearInterval(interval);
-                        setTimeout(onFinish, 300); // Petite pause à la fin
-                        return 100;
-                    }
-                    return prev + 2;
-                });
-            }, 20);
-        };
+    // Quand la vidéo est chargée (metadata / data)
+    video.onloadeddata = () => {
+      interval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval);
+            setTimeout(onFinish, 300);
+            return 100;
+          }
+          return prev + 2;
+        });
+      }, 20);
+    };
 
-        return () => {
-            // Nettoyer l'intervalle même si le composant est démonté
-            if (interval) {
-                clearInterval(interval);
-            }
-        };
-    }, [onFinish, gifUrl]); // Dépendances : on relance l'effet si `gifUrl` change
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [onFinish, videoUrl]);
 
-    return (
-        <div className="loader-container">
-            <div className="loading-bar">
-                <div
-                    className="progress"
-                    style={{ width: `${progress}%` }}
-                ></div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="loader-container">
+      <div className="loading-bar">
+        <div className="progress" style={{ width: `${progress}%` }}></div>
+      </div>
+    </div>
+  );
 }
 
 export default Loader;
