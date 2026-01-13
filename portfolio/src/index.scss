@@ -246,8 +246,11 @@
       position: absolute;
       top: 80px;
       left: 50%;
-      transform: translateX(-50%);
-      background-color: #18172bcb;
+      transform: translate(-50%, -30px); // fermé = légèrement au-dessus
+      opacity: 0;
+      pointer-events: none;
+
+      background-color: #18172bf9;
       border-radius: 20px;
       border: 1px solid $yellowColor;
       display: flex;
@@ -255,12 +258,14 @@
       width: 60%;
       height: 500px;
       padding: 10px;
-
       z-index: 1000;
 
+      transition: transform 0.35s ease, opacity 0.35s ease;
+
       &.open {
-        transform: translateX(0%);
-        transition: transform 0.8s ease-in-out;
+        transform: translate(-50%, 0); // ouvert = à sa place
+        opacity: 1;
+        pointer-events: auto;
       }
     }
 
@@ -714,7 +719,6 @@
   border-radius: 15px 15px 0px 0px;
 
   .contact-form {
-    max-width: 600px;
     margin: 60px auto;
     padding: 50px;
     border-radius: 10px;
