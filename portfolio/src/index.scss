@@ -6,19 +6,18 @@
   font-weight: 400;
 }
 
-.body-content::before {
-  content: "";
+#background-video {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/assets/background.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+  object-fit: cover;
+
   z-index: -1;
+  pointer-events: none;
 }
 
 // Barre de chargement
